@@ -1,58 +1,164 @@
-// --- BASE DE DATOS DE LOS 5 CURSOS CON CONTENIDO POR MÓDULO ---
+// --- 1. BASE DE DATOS PERSONALIZABLE POR CURSO Y MÓDULO ---
 const coursesData = {
   "quimica": {
     title: "🧪 Curso: Laboratorio de Química y Física",
     desc: "Experimentos virtuales, infografías animadas y estructura de la materia.",
     modules: [
-      { name: "📌 Módulo 1: La Materia", video: "https://www.youtube.com/embed/fOuRqk1nzgY", images: [{ url: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400", title: "Materia y Moléculas" }] },
-      { name: "📌 Módulo 2: Tabla Periódica", video: "https://www.youtube.com/embed/fOuRqk1nzgY", images: [{ url: "https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=400", title: "Elementos Químicos" }] },
-      { name: "📌 Módulo 3: Leyes de Newton", video: "https://www.youtube.com/embed/fOuRqk1nzgY", images: [{ url: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400", title: "Fuerza y Dinámica" }] },
-      { name: "📌 Módulo 4: Experimentos", video: "https://www.youtube.com/embed/fOuRqk1nzgY", images: [{ url: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400", title: "Laboratorio Práctico" }] }
+      { 
+        name: "📌 Módulo 1: La Materia", 
+        video: "https://www.youtube.com/watch?v=vPaPmrfgmvo", 
+        pdf: "docs/quimica-m1.pdf",
+        images: [{ url: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400", title: "Infografía: Átomos y Moléculas" }] 
+      },
+      { 
+        name: "📌 Módulo 2: Tabla Periódica", 
+        video: "https://youtu.be/FqZ3BSeu1d0?si=1x1fCH8PdfSNev1g", 
+        pdf: "docs/quimica-m2.pdf",
+        images: [{ url: "https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=400", title: "Tabla Periódica Ilustrada" }] 
+      },
+      { 
+        name: "📌 Módulo 3: Leyes de Newton", 
+        video: "https://youtu.be/iLt6C1oxmlc?si=ily12K37xid0aPvd", 
+        pdf: "docs/quimica-m3.pdf",
+        images: [{ url: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400", title: "Leyes de la Dinámica" }] 
+      },
+      { 
+        name: "📌 Módulo 4: Experimentos", 
+        video: "https://youtu.be/299hBkuNgYk?si=adpLD903SZLu77Rj", 
+        pdf: "docs/quimica-m4.pdf",
+        images: [{ url: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400", title: "Guía de Laboratorio" }] 
+      }
     ]
   },
   "algebra": {
     title: "📐 Curso: Álgebra Aplicada y Trigonometría",
     desc: "Aprende resolución de ecuaciones, gráficos de funciones y trigonometría.",
     modules: [
-      { name: "📌 Módulo 1: Ecuaciones de 2do Grado", video: "https://www.youtube.com/embed/L1c_vEsm1vA", images: [{ url: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400", title: "Fórmula General" }] },
-      { name: "📌 Módulo 2: Funciones y Gráficas", video: "https://www.youtube.com/embed/L1c_vEsm1vA", images: [{ url: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400", title: "Plano Cartesiano" }] },
-      { name: "📌 Módulo 3: Razones Trigonométricas", video: "https://www.youtube.com/embed/L1c_vEsm1vA", images: [{ url: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400", title: "Seno y Coseno" }] },
-      { name: "📌 Módulo 4: Geometría 3D", video: "https://www.youtube.com/embed/L1c_vEsm1vA", images: [{ url: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400", title: "Sólidos Espaciales" }] }
+      { 
+        name: "📌 Módulo 1: Ecuaciones de 2do Grado", 
+        video: "https://youtu.be/ZC67c5ar9mA?si=LGDpabOQ1Kan6I2r", 
+        pdf: "docs/algebra-m1.pdf",
+        images: [{ url: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400", title: "Fórmula General" }] 
+      },
+      { 
+        name: "📌 Módulo 2: Funciones y Gráficas", 
+        video: "https://youtu.be/ojiMGOqwwCE?si=WoVCO0L7TiRaEmvc", 
+        pdf: "docs/algebra-m2.pdf",
+        images: [{ url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxnmrYc51LdWQnFL_DPoTEL2nDoDpS_5iFu3Kpf2tyXZ8O5e9tjpm4i_tP&s=10", title: "Plano Cartesiano" }] 
+      },
+      { 
+        name: "📌 Módulo 3: Razones Trigonométricas", 
+        video: "https://youtu.be/CRg5jQRj1Hg?si=7ptR3zGdke4MpVT3", 
+        pdf: "docs/algebra-m3.pdf",
+        images: [{ url: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ-r3QLKk8UK_djXyRWYCSnaZGz8s_D0AyIPRGKGS5AmEOeKpBW", title: "Triángulos Rectángulos" }] 
+      },
+      { 
+        name: "📌 Módulo 4: Geometría 3D", 
+        video: "https://youtu.be/RWwJ7NGpdQQ?si=jE4bQXTc97v2ssDH", 
+        pdf: "docs/algebra-m4.pdf",
+        images: [{ url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR37HYEEfP7W5cEGioIUC9yqJlcRaA8s9ZpEH1ywjEqypqAVEfZB0EEdrI&s=10", title: "Cuerpos Geométricos" }] 
+      }
     ]
   },
   "historia": {
     title: "📖 Curso: Historia Universal e Infografías",
     desc: "Líneas de tiempo interactivas, esquemas visuales y civilizaciones antiguas.",
     modules: [
-      { name: "📌 Módulo 1: Prehistoria y Egipto", video: "https://www.youtube.com/embed/G2tUkEvo_lM", images: [{ url: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=400", title: "Las Pirámides" }] },
-      { name: "📌 Módulo 2: Grecia y Roma", video: "https://www.youtube.com/embed/G2tUkEvo_lM", images: [{ url: "https://images.unsplash.com/photo-1461360370896-922624d12aa1?w=400", title: "Imperio Romano" }] },
-      { name: "📌 Módulo 3: Edad Media", video: "https://www.youtube.com/embed/G2tUkEvo_lM", images: [{ url: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=400", title: "Feudalismo" }] },
-      { name: "📌 Módulo 4: Historia Contemporánea", video: "https://www.youtube.com/embed/G2tUkEvo_lM", images: [{ url: "https://images.unsplash.com/photo-1461360370896-922624d12aa1?w=400", title: "Siglo XX" }] }
+      { 
+        name: "📌 Módulo 1: Prehistoria y Egipto", 
+        video: "https://youtu.be/ZUyWM3nr4yY?si=RefjAWunkvqm4tt6", 
+        pdf: "docs/historia-m1.pdf",
+        images: [{ url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlMAF0Xim4a_B6PlR0hwKK1XN8zqG_4sDlLTcSidM__EWYrAbsHPGd62c&s=10", title: "Egipto Antiguo" }] 
+      },
+      { 
+        name: "📌 Módulo 2: Grecia y Roma", 
+        video: "https://youtu.be/G2tUkEvo_lM?si=RefjAWunkvqm4tt6", 
+        pdf: "docs/historia-m2.pdf",
+        images: [{ url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-d7BVdGTm9nM6d1aiqLf30y7IW7Fp-ZxBM7h0fdWASnNk8U_UMBwmIQI&s=10", title: "Grecia Clásica" }] 
+      },
+      { 
+        name: "📌 Módulo 3: Edad Media", 
+        video: "https://youtu.be/Ra1bg5KcgNw?si=ctamgKaUdelbmMg1", 
+        pdf: "docs/historia-m3.pdf",
+        images: [{ url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZk2-LVddNxxf49ajGJXd4bPRC9es2u4LfDg2KaxiDiVGvLwUK1UqLk2q-&s=10", title: "El Feudalismo" }] 
+      },
+      { 
+        name: "📌 Módulo 4: Historia Contemporánea", 
+        video: "https://youtu.be/G2tUkEvo_lM?si=RefjAWunkvqm4tt6", 
+        pdf: "docs/historia-m4.pdf",
+        images: [{ url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM3isU9QtP0xNgbLTgjsxw8J7wbx7v7l3mv6axS835A7TUmD--kOIach8&s=10", title: "Revolución Industrial" }] 
+      }
     ]
   },
   "biologia": {
     title: "🔬 Curso: Biología General y Anatomía",
     desc: "Células, genética, sistemas del cuerpo humano y ecología.",
     modules: [
-      { name: "📌 Módulo 1: La Célula y ADN", video: "https://www.youtube.com/embed/3RryfP9b_jE", images: [{ url: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=400", title: "Estructura Celular" }] },
-      { name: "📌 Módulo 2: Sistema Circulatorio", video: "https://www.youtube.com/embed/3RryfP9b_jE", images: [{ url: "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=400", title: "Anatomía Humana" }] },
-      { name: "📌 Módulo 3: Genética de Mendel", video: "https://www.youtube.com/embed/3RryfP9b_jE", images: [{ url: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=400", title: "Leyes de la Herencia" }] },
-      { name: "📌 Módulo 4: Ecosistemas", video: "https://www.youtube.com/embed/3RryfP9b_jE", images: [{ url: "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=400", title: "Biodiversidad" }] }
+      { 
+        name: "📌 Módulo 1: La Célula y ADN", 
+        video: "https://youtu.be/tfDRCSjqqvQ?si=qhmv2U5197UsEoFr", 
+        pdf: "docs/biologia-m1.pdf",
+        images: [{ url: "https://medlineplus.gov/images/PX000098_PRESENTATION.jpeg", title: "Célula Eucariota" }] 
+      },
+      { 
+        name: "📌 Módulo 2: Sistema Circulatorio", 
+        video: "https://youtu.be/n1Sxp8AAUAw?si=y-CtBw6TngTgRu13", 
+        pdf: "docs/biologia-m2.pdf",
+        images: [{ url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT07wd84RrsdjGGKtkb5mnLFH-cpd8UQrs904xtUCQsxSCLisHmyIBm9bQx&s=10", title: "Anatomía Cardíaca" }] 
+      },
+      { 
+        name: "📌 Módulo 3: Genética de Mendel", 
+        video: "https://youtu.be/LXXK2l1pdv8?si=A8H4-p9p96GHKjGC", 
+        pdf: "docs/biologia-m3.pdf",
+        images: [{ url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0yruTAUMsK3BfKVPVI36CEOUppAbvAUYZxmSqTGoBNA&s=10", title: "Leyes Genéticas" }] 
+      },
+      { 
+        name: "📌 Módulo 4: Ecosistemas", 
+        video: "https://youtu.be/Hut5uxHda38?si=c1X9GYKRh339S8FM", 
+        pdf: "docs/biologia-m4.pdf",
+        images: [{ url: "https://upload.wikimedia.org/wikipedia/commons/7/71/FoodChain.svg", title: "Cadenas Tróficas" }] 
+      }
     ]
   },
   "lenguaje": {
     title: "✍️ Curso: Lenguaje, Gramática y Redacción",
     desc: "Ortografía práctica, reglas de acentuación, sintaxis y literatura.",
     modules: [
-      { name: "📌 Módulo 1: Reglas de Acentuación", video: "https://www.youtube.com/embed/fOnpCmsQvS8", images: [{ url: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400", title: "Tildación Aguda, Grave y Esdrújula" }] },
-      { name: "📌 Módulo 2: La Oración y Sintaxis", video: "https://www.youtube.com/embed/fOnpCmsQvS8", images: [{ url: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400", title: "Sujeto y Predicado" }] },
-      { name: "📌 Módulo 3: Taller de Redacción", video: "https://www.youtube.com/embed/fOnpCmsQvS8", images: [{ url: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400", title: "Estructura del Ensayo" }] },
-      { name: "📌 Módulo 4: Géneros Literarios", video: "https://www.youtube.com/embed/fOnpCmsQvS8", images: [{ url: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400", title: "Lírica, Narrativa y Drama" }] }
+      { 
+        name: "📌 Módulo 1: Reglas de Acentuación", 
+        video: "https://youtu.be/69KYr9BaiYA?si=d0GqIEo3baubocdd", 
+        pdf: "docs/lenguaje-m1.pdf",
+        images: [{ url: "https://i.ytimg.com/vi/hfsF47H00kw/maxresdefault.jpg", title: "Acentuación Diacrítica" }] 
+      },
+      { 
+        name: "📌 Módulo 2: La Oración y Sintaxis", 
+        video: "https://www.youtube.com/live/Dv57mumxGgo?si=RUtyiIfilNfUFfP-8", 
+        pdf: "docs/lenguaje-m2.pdf",
+        images: [{ url: "https://es-static.z-dn.net/files/d9c/7ac9c2aec4945c029214ec1d5b42362d.jpg", title: "Estructura Sintáctica" }] 
+      },
+      { 
+        name: "📌 Módulo 3: Taller de Redacción", 
+        video: "https://youtu.be/pJPm2CGTPgc?si=FxGLYS5mTXPNzf_C", 
+        pdf: "docs/lenguaje-m3.pdf",
+        images: [{ url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoBv64ozwN6BHItrJJgGht_GwoSaN_cmXT7hX5_L46G9REDC3RDB9cbnc&s=10", title: "Redacción Formal" }] 
+      },
+      { 
+        name: "📌 Módulo 4: Géneros Literarios", 
+        video: "https://youtu.be/9D4-vPfoQNM?si=3JLMQY0T82xF7Pxf", 
+        pdf: "docs/lenguaje-m4.pdf",
+        images: [{ url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZtIzit-Qp8fYUM34qWzJ-eiRkW7iVpIHcUV2n5UJCNNXreiy7sbuM178&s=10", title: "Obras Cumbres" }] 
+      }
     ]
   }
 };
 
-// --- 1. FILTRADO DE CURSOS ---
+// --- REDIRECCIÓN Y GUARDADO PREVIO A MERCADO PAGO ---
+function redirectToMP(courseKey) {
+  // Guarda qué curso intentó comprar antes de salir hacia Mercado Pago
+  localStorage.setItem('active_course', courseKey);
+}
+
+// --- FILTRADO DE CURSOS ---
 function filterCourses(category, element) {
   const buttons = document.querySelectorAll('.pill');
   buttons.forEach(btn => btn.classList.remove('active'));
@@ -68,7 +174,7 @@ function filterCourses(category, element) {
   });
 }
 
-// --- 2. REGISTRO / LOGIN ---
+// --- AUTENTICACIÓN Y LOGIN ---
 function openAuthModal() {
   const modal = document.getElementById('modal-auth');
   if(modal) modal.style.display = 'flex';
@@ -107,79 +213,21 @@ function logoutUser() {
   location.reload();
 }
 
-// --- 3. PASARELA MERCADO PAGO ---
-let currentPrice = "0.00";
-let selectedCourseKey = "quimica";
-
-function openPaymentModal(courseName, price, courseKey) {
-  currentPrice = price;
-  selectedCourseKey = courseKey;
-  
-  const nameEl = document.getElementById('pay-course-name');
-  const priceEl = document.getElementById('pay-course-price');
-  
-  if (nameEl) nameEl.innerText = courseName;
-  if (priceEl) priceEl.innerText = `S/ ${price} PE`;
-  
-  const formMp = document.getElementById('form-mp');
-  const successScreen = document.getElementById('pay-success-screen');
-  const modalPay = document.getElementById('modal-pay');
-
-  if(formMp) formMp.style.display = 'block';
-  if(successScreen) successScreen.style.display = 'none';
-  if(modalPay) modalPay.style.display = 'flex';
-}
-
-function closePayModal() {
-  const modalPay = document.getElementById('modal-pay');
-  if(modalPay) modalPay.style.display = 'none';
-}
-
-function processPayment(event) {
-  event.preventDefault();
-  const btnSubmit = document.getElementById('btn-pay-submit');
-  if(btnSubmit) {
-    btnSubmit.innerText = "Procesando...";
-    btnSubmit.disabled = true;
-  }
-
-  localStorage.setItem('active_course', selectedCourseKey);
-
-  setTimeout(() => {
-    const formMp = document.getElementById('form-mp');
-    const successScreen = document.getElementById('pay-success-screen');
-    const successMsg = document.getElementById('success-msg');
-    
-    if(formMp) formMp.style.display = 'none';
-    if(successMsg) successMsg.innerText = `¡Pago procesado con éxito por S/ ${currentPrice} PE!`;
-    if(successScreen) successScreen.style.display = 'block';
-
-    setTimeout(() => {
-      window.location.href = 'curso-detalle.html';
-    }, 1000);
-
-  }, 400);
-}
-
-// --- 4. RENDERIZADO DEL AULA Y MÓDULOS INTERACTIVOS ---
+// --- SELECCIÓN Y RENDERIZADO DE MÓDULOS ---
 function selectModule(index) {
   const activeKey = localStorage.getItem('active_course') || "quimica";
   const course = coursesData[activeKey] || coursesData["quimica"];
   const module = course.modules[index];
 
-  // Actualizar estilos de la barra lateral
   const moduleLinks = document.querySelectorAll('#course-modules a');
   moduleLinks.forEach((link, i) => {
-    if (i === index) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
+    if (i === index) link.classList.add('active');
+    else link.classList.remove('active');
   });
 
-  // Cambiar Video y Galería
   const gallery = document.getElementById('course-gallery');
   const videoEl = document.getElementById('course-video');
+  const pdfEl = document.getElementById('course-pdf');
 
   if (gallery) {
     gallery.innerHTML = module.images.map(img => `
@@ -191,6 +239,7 @@ function selectModule(index) {
   }
 
   if (videoEl) videoEl.src = module.video;
+  if (pdfEl) pdfEl.href = module.pdf || "#";
 }
 
 function renderCourseDetail() {
@@ -204,14 +253,12 @@ function renderCourseDetail() {
   if (titleEl) titleEl.innerText = course.title;
   if (descEl) descEl.innerText = course.desc;
 
-  // Generar enlaces clickeables de los módulos
   if (modulesNav) {
     modulesNav.innerHTML = course.modules.map((mod, index) => 
       `<a href="javascript:void(0)" onclick="selectModule(${index})" class="${index === 0 ? 'active' : ''}">${mod.name}</a>`
     ).join('');
   }
 
-  // Cargar el módulo 0 por defecto
   selectModule(0);
 }
 
