@@ -3,102 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Acceso Exclusivo - Material del Curso MathSec</title>
+  <title>Aula EduAcademy - Química y Física</title>
   <link rel="stylesheet" href="css/styles.css">
-  <!-- Visor 3D / Realidad Aumentada -->
-  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
 </head>
-<body>
+<body class="dark-theme dashboard-body">
 
-  <header>
-    <nav class="navbar">
-      <div class="logo">MathSec 📐 <span style="font-size: 0.8rem; color: #10b981; font-weight: bold;">[Acceso VIP Confirmado]</span></div>
-      <a href="index.html" class="btn-primary" style="text-decoration:none;">Volver al Inicio</a>
-    </nav>
-  </header>
-
-  <section class="container" style="text-align: center; margin-top: 2rem;">
-    <h1 style="color: #059669;">🎉 ¡Bienvenido a tu Aula Virtual Privada!</h1>
-    <p>Accede a tus clases explicativas en video y descarga los materiales de estudio en PDF.</p>
-  </section>
-
-  <!-- 6 Módulos Educativos -->
-  <section class="container">
-    <h2>📚 Clases en Video y Guías Prácticas</h2>
+  <!-- Sidebar Lateral (En lugar del diseño arriba-abajo de MathSec) -->
+  <aside class="sidebar">
+    <div class="brand">⚡ EduAcademy</div>
+    <div class="status-box">Status: <span>Acceso Concedido</span></div>
     
-    <div class="grid-modulos">
+    <nav class="side-menu">
+      <a href="#" class="active">📌 Módulo 1: La Materia</a>
+      <a href="#">📌 Módulo 2: Tabla Periódica</a>
+      <a href="#">📌 Módulo 3: Leyes de Newton</a>
+      <a href="#">📌 Módulo 4: Experimentos</a>
+    </nav>
+
+    <a href="index.html" class="btn-exit">← Salir al Catálogo</a>
+  </aside>
+
+  <!-- Contenido Principal Dividido -->
+  <main class="dashboard-content">
+    
+    <header class="content-header">
+      <h1>🧪 Curso: Laboratorio de Química y Física</h1>
+      <p>Material de estudio e infografías del tema seleccionado.</p>
+    </header>
+
+    <div class="content-split">
       
-      <!-- Módulo 1 -->
-      <div class="card">
-        <h3>Módulo 1: Álgebra Básica</h3>
-        <p>Ecuaciones lineales y cuadráticas explicadas paso a paso con la fórmula general.</p>
-        <iframe width="100%" height="200" src="https://www.youtube.com/embed/IGhjsc8lEKY" title="Álgebra Básica" frameborder="0" allowfullscreen style="border-radius:8px; margin: 10px 0;"></iframe>
-        <a href="pdf/algebra-basica.pdf" download="Guia_Algebra_Basica.pdf" class="btn-primary" style="display:block; text-align:center; text-decoration:none;">📄 Descargar Guía PDF</a>
-      </div>
+      <!-- Columna 1: Galería Visual e Infografías (Novedad) -->
+      <section class="visual-panel">
+        <h2>🖼️ Esquemas e Infografías del Tema</h2>
+        <p class="subtitle">Haz clic en cada recurso visual para estudiarlo:</p>
+        
+        <div class="image-gallery">
+          <div class="img-card">
+            <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400" alt="Infografía 1">
+            <p>Esquema 1: Estructura del Átomo</p>
+          </div>
+          <div class="img-card">
+            <img src="https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=400" alt="Infografía 2">
+            <p>Esquema 2: Reacciones Químicas</p>
+          </div>
+        </div>
+      </section>
 
-      <!-- Módulo 2 -->
-      <div class="card">
-        <h3>Módulo 2: Funciones y Gráficas</h3>
-        <p>Análisis de dominio, rango y representación de funciones en el plano cartesiano.</p>
-        <iframe width="100%" height="200" src="https://www.youtube.com/embed/PD45s3U9WA0" title="Funciones Línea" frameborder="0" allowfullscreen style="border-radius:8px; margin: 10px 0;"></iframe>
-        <a href="pdf/funciones-y-graficas.pdf" download="Guia_Funciones_y_Graficas.pdf" class="btn-primary" style="display:block; text-align:center; text-decoration:none;">📄 Descargar Guía PDF</a>
-      </div>
+      <!-- Columna 2: Reproductor y Descarga -->
+      <section class="media-panel">
+        <h2>🎥 Video Explicativo de la Lección</h2>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/fOuRqk1nzgY" title="Video de la clase" allowfullscreen></iframe>
+        </div>
 
-      <!-- Módulo 3 -->
-      <div class="card">
-        <h3>Módulo 3: Trigonometría</h3>
-        <p>Razones trigonométricas (Seno, Coseno, Tangente) y resolución de triángulos rectángulos.</p>
-        <iframe width="100%" height="200" src="https://www.youtube.com/embed/CRg5jQRj1Hg" title="Trigonometría" frameborder="0" allowfullscreen style="border-radius:8px; margin: 10px 0;"></iframe>
-        <a href="pdf/trigonometria.pdf" download="Guia_Trigonometria.pdf" class="btn-primary" style="display:block; text-align:center; text-decoration:none;">📄 Descargar Guía PDF</a>
-      </div>
-
-      <!-- Módulo 4 -->
-      <div class="card">
-        <h3>Módulo 4: Geometría del Espacio 3D</h3>
-        <p>Cálculo de área y volumen en prismas, pirámides, cilindros y esferas.</p>
-        <iframe width="100%" height="200" src="https://www.youtube.com/embed/n0j1XwaroHs" title="Geometría 3D" frameborder="0" allowfullscreen style="border-radius:8px; margin: 10px 0;"></iframe>
-        <a href="pdf/geometria-3d.pdf" download="Guia_Geometria_3D.pdf" class="btn-primary" style="display:block; text-align:center; text-decoration:none;">📄 Descargar Guía PDF</a>
-      </div>
-
-      <!-- Módulo 5 -->
-      <div class="card">
-        <h3>Módulo 5: Estadística Descriptiva</h3>
-        <p>Medidas de tendencia central (media, mediana, moda), gráficos y análisis de datos.</p>
-        <iframe width="100%" height="200" src="https://www.youtube.com/embed/fOuRqk1nzgY" title="Estadística" frameborder="0" allowfullscreen style="border-radius:8px; margin: 10px 0;"></iframe>
-        <a href="pdf/estadistica-descriptiva.pdf" download="Guia_Estadistica_Descriptiva.pdf" class="btn-primary" style="display:block; text-align:center; text-decoration:none;">📄 Descargar Guía PDF</a>
-      </div>
-
-      <!-- Módulo 6 -->
-      <div class="card">
-        <h3>Módulo 6: Probabilidad y Azar</h3>
-        <p>Cálculo de sucesos, experimentos aleatorios y regla de Laplace.</p>
-        <iframe width="100%" height="200" src="https://www.youtube.com/embed/WeeEE8o1aqM" title="Probabilidad" frameborder="0" allowfullscreen style="border-radius:8px; margin: 10px 0;"></iframe>
-        <a href="pdf/probabilidad-y-azar.pdf" download="Guia_Probabilidad_y_Azar.pdf" class="btn-primary" style="display:block; text-align:center; text-decoration:none;">📄 Descargar Guía PDF</a>
-      </div>
+        <div class="download-box">
+          <h3>📥 Material Complementario</h3>
+          <p>Descarga la guía en formato PDF para resolver las tareas en casa:</p>
+          <a href="pdf/quimica-guia.pdf" download class="btn-download">📄 Descargar Guía Práctica PDF</a>
+        </div>
+      </section>
 
     </div>
-  </section>
 
-  <!-- Módulo Interactivo 3D / Realidad Aumentada -->
-  <section class="container" style="margin-top: 2rem;">
-    <h2>📐 Laboratorio 3D Interactivo</h2>
-    <p>Interactúa con el modelo geométrico o proyectalo en Realidad Aumentada desde tu smartphone:</p>
-    <div style="width: 100%; height: 350px; background: #f1f5f9; border-radius: 12px; overflow: hidden; margin-top: 15px;">
-      <model-viewer 
-        src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
-        ar 
-        ar-modes="webxr scene-viewer quick-look" 
-        camera-controls 
-        shadow-intensity="1"
-        style="width: 100%; height: 100%;"
-        alt="Modelo Geométrico 3D">
-      </model-viewer>
-    </div>
-  </section>
-
-  <footer style="margin-top: 3rem; text-align: center; padding: 20px; color: #64748b;">
-    <p>&copy; 2026 MathSec - Aula Virtual Exclusiva | Autor: Leibin Escobedo</p>
-  </footer>
+  </main>
 
 </body>
 </html>

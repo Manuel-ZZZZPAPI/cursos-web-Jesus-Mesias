@@ -3,65 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MathSec - Plataforma Educativa de Matemáticas</title>
+  <title>EduAcademy - Cursos Escolares</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="dark-theme">
 
-  <header>
-    <nav class="navbar">
-      <div class="logo">MathSec 📐</div>
-      <div class="nav-links">
-        <a href="#cursos">Cursos</a>
-        <a href="#precios">Planes</a>
-        <button id="btn-login" class="btn-primary" onclick="openModal()">Iniciar Sesión / Registro</button>
-      </div>
-    </nav>
-  </header>
+  <nav class="top-nav">
+    <div class="brand">⚡ EduAcademy</div>
+    <div class="user-pill">Estudiante: Invitado</div>
+  </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Aprende Matemáticas de Secundaria a tu Propio Ritmo</h1>
-      <p>Clases en video explicativas, material descargable en PDF y laboratorios tridimensionales en Realidad Aumentada.</p>
-      <a href="#precios" class="btn-primary btn-lg">Obtener Acceso VIP</a>
-    </div>
-  </section>
+  <main class="main-layout">
+    <!-- Header Banner -->
+    <header class="hero-banner">
+      <h1>Portal de Reforzamiento Escolar</h1>
+      <p>Selecciona la materia que deseas aprender y accede al contenido visual completo.</p>
+    </header>
 
-  <!-- Sección de Planes y Pago -->
-  <section id="precios" class="container">
-    <h2 style="text-align: center; margin-bottom: 1.5rem;">Acceso Completo al Curso MOOC</h2>
-    
-    <div style="max-width: 450px; margin: 0 auto;">
-      <div class="card" style="text-align: center; border: 2px solid #2563eb;">
-        <h3>Plan Estudiante VIP</h3>
-        <p>Certificado + Materiales PDF + Acceso 24/7</p>
-        <p style="font-size: 2.2rem; font-weight: bold; color: #2563eb; margin: 15px 0;">S/ 49.00 PE</p>
-        
-        <a href="curso-privado.html" class="btn-primary" style="background-color: #009ee3; display: block; text-align: center; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: bold;">
-          💳 Pagar con Mercado Pago 💳
-        </a>
-      </div>
-    </div>
-  </section>
+    <!-- Filtros por Categoria -->
+    <section class="category-pills">
+      <button class="pill active">🌟 Todos los Cursos</button>
+      <button class="pill">🧪 Ciencias Naturales</button>
+      <button class="pill">📐 Ciencias Exactas</button>
+      <button class="pill">📖 Humanidades</button>
+    </section>
 
-  <!-- Modal de Autenticación -->
-  <div id="modal-auth" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h2>Iniciar Sesión en MathSec</h2>
-      <form id="form-login" onsubmit="handleLogin(event)">
-        <input type="text" id="username" placeholder="Usuario / Correo" required>
-        <input type="password" id="password" placeholder="Contraseña" required>
-        <button type="submit" class="btn-primary" style="width: 100%; margin-top: 10px;">Ingresar al Aula</button>
-      </form>
-    </div>
-  </div>
+    <!-- Catalogo por Asignatura -->
+    <section class="courses-list">
+      
+      <!-- Curso 1 -->
+      <article class="course-row">
+        <div class="course-preview">
+          <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400" alt="Quimica">
+        </div>
+        <div class="course-info">
+          <span class="badge badge-green">Ciencias Naturales</span>
+          <h2>Laboratorio de Química y Física</h2>
+          <p>Experimentos virtuales, infografías animadas y estructura de la materia explicada paso a paso.</p>
+          <div class="course-meta">
+            <span class="price">S/ 39.00 PE</span>
+            <a href="curso-detalle.html" class="btn-buy">🛒 Adquirir Curso (Mercado Pago)</a>
+          </div>
+        </div>
+      </article>
 
-  <footer style="text-align: center; padding: 20px; color: #64748b; margin-top: 3rem;">
-    <p>&copy; 2026 MathSec - Plataforma Educativa MOOC | Autor: Leibin Escobedo</p>
+      <!-- Curso 2 -->
+      <article class="course-row">
+        <div class="course-preview">
+          <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400" alt="Matematicas">
+        </div>
+        <div class="course-info">
+          <span class="badge badge-purple">Ciencias Exactas</span>
+          <h2>Álgebra Aplicada y Trigonometría</h2>
+          <p>Aprende resolución de problemas reales, gráficos de funciones y ejercicios explicados.</p>
+          <div class="course-meta">
+            <span class="price">S/ 35.00 PE</span>
+            <a href="curso-detalle.html" class="btn-buy">🛒 Adquirir Curso (Mercado Pago)</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Curso 3 -->
+      <article class="course-row">
+        <div class="course-preview">
+          <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=400" alt="Historia">
+        </div>
+        <div class="course-info">
+          <span class="badge badge-amber">Humanidades</span>
+          <h2>Historia Universal e Infografías</h2>
+          <p>Líneas de tiempo interactivas, esquemas visuales y técnicas de lectura comprensiva.</p>
+          <div class="course-meta">
+            <span class="price">S/ 29.00 PE</span>
+            <a href="curso-detalle.html" class="btn-buy">🛒 Adquirir Curso (Mercado Pago)</a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 EduAcademy - Plataforma de Aprendizaje por Cursos</p>
   </footer>
 
-  <script src="js/main.js"></script>
 </body>
 </html>
