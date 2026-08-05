@@ -357,3 +357,82 @@ footer {
 .btn-submit:hover {
   background: #9333ea;
 }
+/* Botón estilo Mercado Pago */
+.btn-buy {
+  background: #009ee3;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-buy:hover {
+  background: #0081b8;
+}
+
+/* Modal Mercado Pago */
+.pay-box {
+  border-top: 5px solid #009ee3;
+}
+
+.mp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 10px;
+}
+
+.mp-secure {
+  background: #064e3b;
+  color: #34d399;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.btn-mp-submit {
+  width: 100%;
+  padding: 12px;
+  background: #009ee3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-mp-submit:hover {
+  background: #0081b8;
+}
+
+/* Pantalla de Éxito */
+.success-screen {
+  display: none;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.checkmark {
+  font-size: 3rem;
+}
+
+.loader-bar {
+  height: 4px;
+  background: #84cc16;
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 2px;
+  animation: loading 3s linear forwards;
+}
+
+@keyframes loading {
+  from { width: 0%; }
+  to { width: 100%; }
+}
