@@ -46,7 +46,7 @@ const coursesData = {
     modules: ["📌 Módulo 1: Reglas de Acentuación", "📌 Módulo 2: La Oración y Sintaxis", "📌 Módulo 3: Taller de Redacción", "📌 Módulo 4: Géneros Literarios"],
     video: "https://www.youtube.com/embed/U3BTo_G_tqQ",
     images: [
-      { url: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400", title: "Esquema 1: Reglas de Uso de la B / V / C / S" },
+      { url: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400", title: "Esquema 1: Reglas Ortográficas" },
       { url: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400", title: "Esquema 2: Estructura del Párrafo" }
     ]
   }
@@ -70,11 +70,13 @@ function filterCourses(category, element) {
 
 // --- 2. REGISTRO / LOGIN ---
 function openAuthModal() {
-  document.getElementById('modal-auth').style.display = 'flex';
+  const modal = document.getElementById('modal-auth');
+  if(modal) modal.style.display = 'flex';
 }
 
 function closeAuthModal() {
-  document.getElementById('modal-auth').style.display = 'none';
+  const modal = document.getElementById('modal-auth');
+  if(modal) modal.style.display = 'none';
 }
 
 function handleAuthSubmit(event) {
@@ -84,7 +86,6 @@ function handleAuthSubmit(event) {
     localStorage.setItem('edu_user', userName);
     updateUserDisplay(userName);
     closeAuthModal();
-    alert(`¡Bienvenido/a ${userName}! Tus datos han sido guardados.`);
   }
 }
 
@@ -114,77 +115,93 @@ function openPaymentModal(courseName, price, courseKey) {
   currentPrice = price;
   selectedCourseKey = courseKey;
   
-  document.getElementById('pay-course-name').innerText = courseName;
-  document.getElementById('pay-course-price').innerText = `S/ ${price} PE`;
+  const nameEl = document.getElementById('pay-course-name');
+  const priceEl = document.getElementById('pay-course-price');
   
-  document.getElementById('form-mp').style.display = 'block';
-  document.getElementById('pay-success-screen').style.display = 'none';
-  document.getElementById('modal-pay').style.display = 'flex';
+  if (nameEl) nameEl.innerText = courseName;
+  if (priceEl) priceEl.innerText = `S/ ${price} PE`;
+  
+  const formMp = document.getElementById('form-mp');
+  const successScreen = document.getElementById('pay-success-screen');
+  const modalPay = document.getElementById('modal-pay');
+
+  if(formMp) formMp.style.display = 'block';
+  if(successScreen) successScreen.style.display = 'none';
+  if(modalPay) modalPay.style.display = 'flex';
 }
 
 function closePayModal() {
-  document.getElementById('modal-pay').style.display = 'none';
+  const modalPay = document.getElementById('modal-pay');
+  if(modalPay) modalPay.style.display = 'none';
 }
 
 function processPayment(event) {
   event.preventDefault();
   const btnSubmit = document.getElementById('btn-pay-submit');
-  btnSubmit.innerText = "Procesando con el banco...";
-  btnSubmit.disabled = true;
+  if(btnSubmit) {
+    btnSubmit.innerText = "Procesando...";
+    btnSubmit.disabled = true;
+  }
 
+  // Guardar inmediatamente el curso seleccionado
+  localStorage.setItem('active_course', selectedCourseKey);
+
+  // Simulación ultra-rápida (solo 400ms)
   setTimeout(() => {
-    document.getElementById('form-mp').style.display = 'none';
+    const formMp = document.getElementById('form-mp');
     const successScreen = document.getElementById('pay-success-screen');
     const successMsg = document.getElementById('success-msg');
     
-    successMsg.innerText = `¡Pago procesado con éxito por S/ ${currentPrice} PE!`;
-    successScreen.style.display = 'block';
+    if(formMp) formMp.style.display = 'none';
+    if(successMsg) successMsg.innerText = `¡Pago procesado con éxito por S/ ${currentPrice} PE!`;
+    if(successScreen) successScreen.style.display = 'block';
 
-    // Guardar en memoria el curso seleccionado
-    localStorage.setItem('active_course', selectedCourseKey);
-
+    // Redirigir casi instantáneamente
     setTimeout(() => {
       window.location.href = 'curso-detalle.html';
-    }, 2500);
+    }, 1000);
 
-  }, 1200);
+  }, 400);
 }
 
-// --- 4. CARGA DINÁMICA DE CURSO-DETALLE.HTML ---
+// --- 4. RENDERIZADO DEL AULA VIRTUAL ---
 function renderCourseDetail() {
   const activeKey = localStorage.getItem('active_course') || "quimica";
   const course = coursesData[activeKey] || coursesData["quimica"];
 
-  // Cambiar Título y Descripción
-  document.getElementById('course-title').innerText = course.title;
-  document.getElementById('course-desc').innerText = course.desc;
-
-  // Cambiar Módulos en Sidebar
+  const titleEl = document.getElementById('course-title');
+  const descEl = document.getElementById('course-desc');
   const modulesNav = document.getElementById('course-modules');
-  modulesNav.innerHTML = course.modules.map((mod, index) => 
-    `<a href="#" class="${index === 0 ? 'active' : ''}">${mod}</a>`
-  ).join('');
-
-  // Cambiar Galería de Imágenes
   const gallery = document.getElementById('course-gallery');
-  gallery.innerHTML = course.images.map(img => `
-    <div class="img-card">
-      <img src="${img.url}" alt="${img.title}">
-      <p>${img.title}</p>
-    </div>
-  `).join('');
+  const videoEl = document.getElementById('course-video');
 
-  // Cambiar Video
-  document.getElementById('course-video').src = course.video;
+  if (titleEl) titleEl.innerText = course.title;
+  if (descEl) descEl.innerText = course.desc;
+
+  if (modulesNav) {
+    modulesNav.innerHTML = course.modules.map((mod, index) => 
+      `<a href="#" class="${index === 0 ? 'active' : ''}">${mod}</a>`
+    ).join('');
+  }
+
+  if (gallery) {
+    gallery.innerHTML = course.images.map(img => `
+      <div class="img-card">
+        <img src="${img.url}" alt="${img.title}">
+        <p>${img.title}</p>
+      </div>
+    `).join('');
+  }
+
+  if (videoEl) videoEl.src = course.video;
 }
 
-// Inicializador según la página
-window.onload = function() {
+// Cargar automáticamente al abrir cualquier vista
+document.addEventListener("DOMContentLoaded", function() {
   const savedUser = localStorage.getItem('edu_user');
   if (savedUser) updateUserDisplay(savedUser);
 
-  // Si estamos en curso-detalle.html, cargar la información del curso seleccionado
   if (document.getElementById('course-title')) {
     renderCourseDetail();
   }
-};
+});
