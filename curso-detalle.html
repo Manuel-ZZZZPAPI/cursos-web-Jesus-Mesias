@@ -3,64 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aula EduAcademy - Química y Física</title>
+  <title>Aula EduAcademy - Detalle del Curso</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="dark-theme dashboard-body">
 
-  <!-- Sidebar Lateral (En lugar del diseño arriba-abajo de MathSec) -->
+  <!-- Sidebar Lateral -->
   <aside class="sidebar">
     <div class="brand">⚡ EduAcademy</div>
     <div class="status-box">Status: <span>Acceso Concedido</span></div>
     
-    <nav class="side-menu">
-      <a href="#" class="active">📌 Módulo 1: La Materia</a>
-      <a href="#">📌 Módulo 2: Tabla Periódica</a>
-      <a href="#">📌 Módulo 3: Leyes de Newton</a>
-      <a href="#">📌 Módulo 4: Experimentos</a>
+    <!-- Modulos Dinamicos -->
+    <nav class="side-menu" id="course-modules">
+      <a href="#" class="active">📌 Cargando módulos...</a>
     </nav>
 
     <a href="index.html" class="btn-exit">← Salir al Catálogo</a>
   </aside>
 
-  <!-- Contenido Principal Dividido -->
+  <!-- Contenido Principal Dinámico -->
   <main class="dashboard-content">
     
     <header class="content-header">
-      <h1>🧪 Curso: Laboratorio de Química y Física</h1>
-      <p>Material de estudio e infografías del tema seleccionado.</p>
+      <h1 id="course-title">Cargando Curso...</h1>
+      <p id="course-desc">Material de estudio e infografías del tema seleccionado.</p>
     </header>
 
     <div class="content-split">
       
-      <!-- Columna 1: Galería Visual e Infografías (Novedad) -->
+      <!-- Columna 1: Galería Visual e Infografías Dinámicas -->
       <section class="visual-panel">
         <h2>🖼️ Esquemas e Infografías del Tema</h2>
         <p class="subtitle">Haz clic en cada recurso visual para estudiarlo:</p>
         
-        <div class="image-gallery">
-          <div class="img-card">
-            <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400" alt="Infografía 1">
-            <p>Esquema 1: Estructura del Átomo</p>
-          </div>
-          <div class="img-card">
-            <img src="https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=400" alt="Infografía 2">
-            <p>Esquema 2: Reacciones Químicas</p>
-          </div>
+        <div class="image-gallery" id="course-gallery">
+          <!-- Se llena por JavaScript -->
         </div>
       </section>
 
-      <!-- Columna 2: Reproductor y Descarga -->
+      <!-- Columna 2: Video y PDF Dinámicos -->
       <section class="media-panel">
         <h2>🎥 Video Explicativo de la Lección</h2>
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/fOuRqk1nzgY" title="Video de la clase" allowfullscreen></iframe>
+          <iframe id="course-video" src="" title="Video de la clase" allowfullscreen></iframe>
         </div>
 
         <div class="download-box">
           <h3>📥 Material Complementario</h3>
           <p>Descarga la guía en formato PDF para resolver las tareas en casa:</p>
-          <a href="pdf/quimica-guia.pdf" download class="btn-download">📄 Descargar Guía Práctica PDF</a>
+          <a id="course-pdf" href="#" download class="btn-download">📄 Descargar Guía Práctica PDF</a>
         </div>
       </section>
 
@@ -68,5 +59,6 @@
 
   </main>
 
+  <script src="js/main.js"></script>
 </body>
 </html>
