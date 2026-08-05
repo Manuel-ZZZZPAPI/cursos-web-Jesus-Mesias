@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MathSec - Plataforma Educativa de Matemáticas</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">MathSec 📐</div>
+      <div class="nav-links">
+        <a href="#cursos">Cursos</a>
+        <a href="#precios">Planes</a>
+        <button id="btn-login" class="btn-primary" onclick="openModal()">Iniciar Sesión / Registro</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Aprende Matemáticas de Secundaria a tu Propio Ritmo</h1>
+      <p>Clases en video explicativas, material descargable en PDF y laboratorios tridimensionales en Realidad Aumentada.</p>
+      <a href="#precios" class="btn-primary btn-lg">Obtener Acceso VIP</a>
+    </div>
+  </section>
+
+  <!-- Sección de Planes y Pago -->
+  <section id="precios" class="container">
+    <h2 style="text-align: center; margin-bottom: 1.5rem;">Acceso Completo al Curso MOOC</h2>
+    
+    <div style="max-width: 450px; margin: 0 auto;">
+      <div class="card" style="text-align: center; border: 2px solid #2563eb;">
+        <h3>Plan Estudiante VIP</h3>
+        <p>Certificado + Materiales PDF + Acceso 24/7</p>
+        <p style="font-size: 2.2rem; font-weight: bold; color: #2563eb; margin: 15px 0;">S/ 49.00 PE</p>
+        
+        <a href="curso-privado.html" class="btn-primary" style="background-color: #009ee3; display: block; text-align: center; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: bold;">
+          💳 Pagar con Mercado Pago 💳
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal de Autenticación -->
+  <div id="modal-auth" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Iniciar Sesión en MathSec</h2>
+      <form id="form-login" onsubmit="handleLogin(event)">
+        <input type="text" id="username" placeholder="Usuario / Correo" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button type="submit" class="btn-primary" style="width: 100%; margin-top: 10px;">Ingresar al Aula</button>
+      </form>
+    </div>
+  </div>
+
+  <footer style="text-align: center; padding: 20px; color: #64748b; margin-top: 3rem;">
+    <p>&copy; 2026 MathSec - Plataforma Educativa MOOC | Autor: Leibin Escobedo</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
