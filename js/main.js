@@ -1,53 +1,53 @@
-// --- BASE DE DATOS DE LOS 5 CURSOS ---
+// --- BASE DE DATOS DE LOS 5 CURSOS CON CONTENIDO POR MÓDULO ---
 const coursesData = {
   "quimica": {
     title: "🧪 Curso: Laboratorio de Química y Física",
     desc: "Experimentos virtuales, infografías animadas y estructura de la materia.",
-    modules: ["📌 Módulo 1: La Materia", "📌 Módulo 2: Tabla Periódica", "📌 Módulo 3: Leyes de Newton", "📌 Módulo 4: Experimentos"],
-    video: "https://www.youtube.com/embed/fOuRqk1nzgY",
-    images: [
-      { url: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400", title: "Esquema 1: Estructura del Átomo" },
-      { url: "https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=400", title: "Esquema 2: Reacciones Químicas" }
+    modules: [
+      { name: "📌 Módulo 1: La Materia", video: "https://www.youtube.com/embed/fOuRqk1nzgY", images: [{ url: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400", title: "Materia y Moléculas" }] },
+      { name: "📌 Módulo 2: Tabla Periódica", video: "https://www.youtube.com/embed/fOuRqk1nzgY", images: [{ url: "https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=400", title: "Elementos Químicos" }] },
+      { name: "📌 Módulo 3: Leyes de Newton", video: "https://www.youtube.com/embed/fOuRqk1nzgY", images: [{ url: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400", title: "Fuerza y Dinámica" }] },
+      { name: "📌 Módulo 4: Experimentos", video: "https://www.youtube.com/embed/fOuRqk1nzgY", images: [{ url: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400", title: "Laboratorio Práctico" }] }
     ]
   },
   "algebra": {
     title: "📐 Curso: Álgebra Aplicada y Trigonometría",
     desc: "Aprende resolución de ecuaciones, gráficos de funciones y trigonometría.",
-    modules: ["📌 Módulo 1: Ecuaciones de 2do Grado", "📌 Módulo 2: Funciones y Gráficas", "📌 Módulo 3: Razones Trigonométricas", "📌 Módulo 4: Geometría 3D"],
-    video: "https://www.youtube.com/embed/x29311A3p0Q",
-    images: [
-      { url: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400", title: "Esquema 1: Fórmula General y Parábolas" },
-      { url: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400", title: "Esquema 2: Triángulos y Seno/Coseno" }
+    modules: [
+      { name: "📌 Módulo 1: Ecuaciones de 2do Grado", video: "https://www.youtube.com/embed/L1c_vEsm1vA", images: [{ url: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400", title: "Fórmula General" }] },
+      { name: "📌 Módulo 2: Funciones y Gráficas", video: "https://www.youtube.com/embed/L1c_vEsm1vA", images: [{ url: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400", title: "Plano Cartesiano" }] },
+      { name: "📌 Módulo 3: Razones Trigonométricas", video: "https://www.youtube.com/embed/L1c_vEsm1vA", images: [{ url: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400", title: "Seno y Coseno" }] },
+      { name: "📌 Módulo 4: Geometría 3D", video: "https://www.youtube.com/embed/L1c_vEsm1vA", images: [{ url: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400", title: "Sólidos Espaciales" }] }
     ]
   },
   "historia": {
     title: "📖 Curso: Historia Universal e Infografías",
     desc: "Líneas de tiempo interactivas, esquemas visuales y civilizaciones antiguas.",
-    modules: ["📌 Módulo 1: Prehistoria y Egipto", "📌 Módulo 2: Grecia y Roma", "📌 Módulo 3: Edad Media", "📌 Módulo 4: Historia Contemporánea"],
-    video: "https://www.youtube.com/embed/6E8m5G34g-U",
-    images: [
-      { url: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=400", title: "Esquema 1: Línea de Tiempo de las Eras" },
-      { url: "https://images.unsplash.com/photo-1461360370896-922624d12aa1?w=400", title: "Esquema 2: Mapa de Antiguas Civilizaciones" }
+    modules: [
+      { name: "📌 Módulo 1: Prehistoria y Egipto", video: "https://www.youtube.com/embed/G2tUkEvo_lM", images: [{ url: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=400", title: "Las Pirámides" }] },
+      { name: "📌 Módulo 2: Grecia y Roma", video: "https://www.youtube.com/embed/G2tUkEvo_lM", images: [{ url: "https://images.unsplash.com/photo-1461360370896-922624d12aa1?w=400", title: "Imperio Romano" }] },
+      { name: "📌 Módulo 3: Edad Media", video: "https://www.youtube.com/embed/G2tUkEvo_lM", images: [{ url: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=400", title: "Feudalismo" }] },
+      { name: "📌 Módulo 4: Historia Contemporánea", video: "https://www.youtube.com/embed/G2tUkEvo_lM", images: [{ url: "https://images.unsplash.com/photo-1461360370896-922624d12aa1?w=400", title: "Siglo XX" }] }
     ]
   },
   "biologia": {
     title: "🔬 Curso: Biología General y Anatomía",
     desc: "Células, genética, sistemas del cuerpo humano y ecología.",
-    modules: ["📌 Módulo 1: La Célula y ADN", "📌 Módulo 2: Sistema Circulatorio", "📌 Módulo 3: Genética de Mendel", "📌 Módulo 4: Ecosistemas"],
-    video: "https://www.youtube.com/embed/0I-03C28_T4",
-    images: [
-      { url: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=400", title: "Esquema 1: Estructura Celular" },
-      { url: "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=400", title: "Esquema 2: Cadena del ADN" }
+    modules: [
+      { name: "📌 Módulo 1: La Célula y ADN", video: "https://www.youtube.com/embed/3RryfP9b_jE", images: [{ url: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=400", title: "Estructura Celular" }] },
+      { name: "📌 Módulo 2: Sistema Circulatorio", video: "https://www.youtube.com/embed/3RryfP9b_jE", images: [{ url: "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=400", title: "Anatomía Humana" }] },
+      { name: "📌 Módulo 3: Genética de Mendel", video: "https://www.youtube.com/embed/3RryfP9b_jE", images: [{ url: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=400", title: "Leyes de la Herencia" }] },
+      { name: "📌 Módulo 4: Ecosistemas", video: "https://www.youtube.com/embed/3RryfP9b_jE", images: [{ url: "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=400", title: "Biodiversidad" }] }
     ]
   },
   "lenguaje": {
     title: "✍️ Curso: Lenguaje, Gramática y Redacción",
     desc: "Ortografía práctica, reglas de acentuación, sintaxis y literatura.",
-    modules: ["📌 Módulo 1: Reglas de Acentuación", "📌 Módulo 2: La Oración y Sintaxis", "📌 Módulo 3: Taller de Redacción", "📌 Módulo 4: Géneros Literarios"],
-    video: "https://www.youtube.com/embed/U3BTo_G_tqQ",
-    images: [
-      { url: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400", title: "Esquema 1: Reglas Ortográficas" },
-      { url: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400", title: "Esquema 2: Estructura del Párrafo" }
+    modules: [
+      { name: "📌 Módulo 1: Reglas de Acentuación", video: "https://www.youtube.com/embed/fOnpCmsQvS8", images: [{ url: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400", title: "Tildación Aguda, Grave y Esdrújula" }] },
+      { name: "📌 Módulo 2: La Oración y Sintaxis", video: "https://www.youtube.com/embed/fOnpCmsQvS8", images: [{ url: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400", title: "Sujeto y Predicado" }] },
+      { name: "📌 Módulo 3: Taller de Redacción", video: "https://www.youtube.com/embed/fOnpCmsQvS8", images: [{ url: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400", title: "Estructura del Ensayo" }] },
+      { name: "📌 Módulo 4: Géneros Literarios", video: "https://www.youtube.com/embed/fOnpCmsQvS8", images: [{ url: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400", title: "Lírica, Narrativa y Drama" }] }
     ]
   }
 };
@@ -143,10 +143,8 @@ function processPayment(event) {
     btnSubmit.disabled = true;
   }
 
-  // Guardar inmediatamente el curso seleccionado
   localStorage.setItem('active_course', selectedCourseKey);
 
-  // Simulación ultra-rápida (solo 400ms)
   setTimeout(() => {
     const formMp = document.getElementById('form-mp');
     const successScreen = document.getElementById('pay-success-screen');
@@ -156,7 +154,6 @@ function processPayment(event) {
     if(successMsg) successMsg.innerText = `¡Pago procesado con éxito por S/ ${currentPrice} PE!`;
     if(successScreen) successScreen.style.display = 'block';
 
-    // Redirigir casi instantáneamente
     setTimeout(() => {
       window.location.href = 'curso-detalle.html';
     }, 1000);
@@ -164,28 +161,28 @@ function processPayment(event) {
   }, 400);
 }
 
-// --- 4. RENDERIZADO DEL AULA VIRTUAL ---
-function renderCourseDetail() {
+// --- 4. RENDERIZADO DEL AULA Y MÓDULOS INTERACTIVOS ---
+function selectModule(index) {
   const activeKey = localStorage.getItem('active_course') || "quimica";
   const course = coursesData[activeKey] || coursesData["quimica"];
+  const module = course.modules[index];
 
-  const titleEl = document.getElementById('course-title');
-  const descEl = document.getElementById('course-desc');
-  const modulesNav = document.getElementById('course-modules');
+  // Actualizar estilos de la barra lateral
+  const moduleLinks = document.querySelectorAll('#course-modules a');
+  moduleLinks.forEach((link, i) => {
+    if (i === index) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+
+  // Cambiar Video y Galería
   const gallery = document.getElementById('course-gallery');
   const videoEl = document.getElementById('course-video');
 
-  if (titleEl) titleEl.innerText = course.title;
-  if (descEl) descEl.innerText = course.desc;
-
-  if (modulesNav) {
-    modulesNav.innerHTML = course.modules.map((mod, index) => 
-      `<a href="#" class="${index === 0 ? 'active' : ''}">${mod}</a>`
-    ).join('');
-  }
-
   if (gallery) {
-    gallery.innerHTML = course.images.map(img => `
+    gallery.innerHTML = module.images.map(img => `
       <div class="img-card">
         <img src="${img.url}" alt="${img.title}">
         <p>${img.title}</p>
@@ -193,10 +190,31 @@ function renderCourseDetail() {
     `).join('');
   }
 
-  if (videoEl) videoEl.src = course.video;
+  if (videoEl) videoEl.src = module.video;
 }
 
-// Cargar automáticamente al abrir cualquier vista
+function renderCourseDetail() {
+  const activeKey = localStorage.getItem('active_course') || "quimica";
+  const course = coursesData[activeKey] || coursesData["quimica"];
+
+  const titleEl = document.getElementById('course-title');
+  const descEl = document.getElementById('course-desc');
+  const modulesNav = document.getElementById('course-modules');
+
+  if (titleEl) titleEl.innerText = course.title;
+  if (descEl) descEl.innerText = course.desc;
+
+  // Generar enlaces clickeables de los módulos
+  if (modulesNav) {
+    modulesNav.innerHTML = course.modules.map((mod, index) => 
+      `<a href="javascript:void(0)" onclick="selectModule(${index})" class="${index === 0 ? 'active' : ''}">${mod.name}</a>`
+    ).join('');
+  }
+
+  // Cargar el módulo 0 por defecto
+  selectModule(0);
+}
+
 document.addEventListener("DOMContentLoaded", function() {
   const savedUser = localStorage.getItem('edu_user');
   if (savedUser) updateUserDisplay(savedUser);
