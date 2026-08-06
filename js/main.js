@@ -236,7 +236,6 @@ function logoutUser() {
   location.reload();
 }
 
-// --- VISTA DE DETALLE Y REPRODUCTOR ---
 function selectModule(index) {
   const activeKey = localStorage.getItem('active_course') || "quimica";
   const course = coursesData[activeKey] || coursesData["quimica"];
@@ -261,35 +260,15 @@ function selectModule(index) {
     `).join('');
   }
 
-  if (videoEl) videoEl.src = module.video;
+  if (videoEl) {
+    // 💡 ESTA LÍNEA TRANSFORMA CUALQUIER LINK DE YOUTUBE AL FORMATO EMBED AUTOMÁTICAMENTE
+    let cleanVideoUrl = module.video
+      .replace("watch?v=", "embed/")
+      .replace("youtu.be/", "www.youtube.com/embed/")
+      .split("?")[0]; // Elimina parámetros extra como ?si=...
+
+    videoEl.src = cleanVideoUrl;
+  }
+
   if (pdfEl) pdfEl.href = module.pdf || "#";
 }
-
-function renderCourseDetail() {
-  const activeKey = localStorage.getItem('active_course') || "quimica";
-  const course = coursesData[activeKey] || coursesData["quimica"];
-
-  const titleEl = document.getElementById('course-title');
-  const descEl = document.getElementById('course-desc');
-  const modulesNav = document.getElementById('course-modules');
-
-  if (titleEl) titleEl.innerText = course.title;
-  if (descEl) descEl.innerText = course.desc;
-
-  if (modulesNav) {
-    modulesNav.innerHTML = course.modules.map((mod, index) => 
-      `<button onclick="selectModule(${index})" class="pill ${index === 0 ? 'active' : ''}">${mod.name}</button>`
-    ).join('');
-  }
-
-  selectModule(0);
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-  const savedUser = localStorage.getItem('edu_user');
-  if (savedUser) updateUserDisplay(savedUser);
-
-  if (document.getElementById('course-title')) {
-    renderCourseDetail();
-  }
-});
