@@ -152,39 +152,40 @@ const coursesData = {
   }
 };
 
-// --- SIMULACIÓN DE PASARELA Y SELECCIÓN ---
-function simularPago(courseKey, title) {
+// --- PASARELA DE PAGO SIMULADA (MODAL) ---
+function openPayModal(courseKey) {
   localStorage.setItem('active_course', courseKey);
-  const titleElem = document.getElementById('pay-course-title');
-  if (titleElem) titleElem.innerText = title;
-  
-  const modalPay = document.getElementById('modal-pay');
-  if (modalPay) modalPay.style.display = 'flex';
+  const course = coursesData[courseKey];
+  const payTitle = document.getElementById('pay-course-title');
+  if (payTitle && course) {
+    payTitle.innerText = course.title;
+  }
+  const modal = document.getElementById('modal-pay');
+  if (modal) modal.style.display = 'flex';
 }
 
 function closePayModal() {
-  const modalPay = document.getElementById('modal-pay');
-  if (modalPay) modalPay.style.display = 'none';
+  const modal = document.getElementById('modal-pay');
+  if (modal) modal.style.display = 'none';
 }
 
-function procesarPagoSimulado(event) {
-  event.preventDefault();
+function procesarPagoSimulado(e) {
+  e.preventDefault();
   const btn = document.getElementById('btn-pay-submit');
   if (btn) {
     btn.innerText = "⏳ Procesando pago...";
     btn.disabled = true;
   }
   setTimeout(() => {
-    alert("¡Pago procesado con éxito! Entrando a la plataforma de estudio...");
     window.location.href = 'curso-detalle.html';
   }, 1000);
 }
 
-// --- FILTRADO DE CURSOS ---
+// --- FILTRADO DE CURSOS POR CATEGORÍA ---
 function filterCourses(category, element) {
   const buttons = document.querySelectorAll('.pill');
   buttons.forEach(btn => btn.classList.remove('active'));
-  element.classList.add('active');
+  if (element) element.classList.add('active');
 
   const courses = document.querySelectorAll('.course-row');
   courses.forEach(course => {
@@ -199,12 +200,12 @@ function filterCourses(category, element) {
 // --- AUTENTICACIÓN Y LOGIN ---
 function openAuthModal() {
   const modal = document.getElementById('modal-auth');
-  if(modal) modal.style.display = 'flex';
+  if (modal) modal.style.display = 'flex';
 }
 
 function closeAuthModal() {
   const modal = document.getElementById('modal-auth');
-  if(modal) modal.style.display = 'none';
+  if (modal) modal.style.display = 'none';
 }
 
 function handleAuthSubmit(event) {
@@ -235,13 +236,13 @@ function logoutUser() {
   location.reload();
 }
 
-// --- SELECCIÓN Y RENDERIZADO DE MÓDULOS ---
+// --- VISTA DE DETALLE Y REPRODUCTOR ---
 function selectModule(index) {
   const activeKey = localStorage.getItem('active_course') || "quimica";
   const course = coursesData[activeKey] || coursesData["quimica"];
   const module = course.modules[index];
 
-  const moduleLinks = document.querySelectorAll('#course-modules a');
+  const moduleLinks = document.querySelectorAll('#course-modules button, #course-modules a');
   moduleLinks.forEach((link, i) => {
     if (i === index) link.classList.add('active');
     else link.classList.remove('active');
@@ -251,11 +252,11 @@ function selectModule(index) {
   const videoEl = document.getElementById('course-video');
   const pdfEl = document.getElementById('course-pdf');
 
-  if (gallery) {
+  if (gallery && module.images) {
     gallery.innerHTML = module.images.map(img => `
-      <div class="img-card">
-        <img src="${img.url}" alt="${img.title}">
-        <p>${img.title}</p>
+      <div class="img-card" style="margin-bottom: 10px;">
+        <img src="${img.url}" alt="${img.title}" style="max-width: 100%; border-radius: 6px;">
+        <p style="margin: 5px 0 0 0; font-size: 0.85rem; color: #cbd5e1;">${img.title}</p>
       </div>
     `).join('');
   }
@@ -277,7 +278,7 @@ function renderCourseDetail() {
 
   if (modulesNav) {
     modulesNav.innerHTML = course.modules.map((mod, index) => 
-      `<a href="javascript:void(0)" onclick="selectModule(${index})" class="${index === 0 ? 'active' : ''}">${mod.name}</a>`
+      `<button onclick="selectModule(${index})" class="pill ${index === 0 ? 'active' : ''}">${mod.name}</button>`
     ).join('');
   }
 

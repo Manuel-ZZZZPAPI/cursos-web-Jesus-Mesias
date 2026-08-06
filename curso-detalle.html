@@ -15,33 +15,29 @@
 
   <main class="main-layout">
     
-    <!-- Título y descripción dinámica -->
     <header class="hero-banner" style="text-align: left;">
       <h1 id="course-title">Cargando Curso...</h1>
       <p id="course-desc">Cargando información del contenido...</p>
     </header>
 
-    <!-- Pestañas de Navegación entre Módulos -->
-    <nav id="course-modules" class="category-pills" style="margin-bottom: 1.5rem; justify-content: flex-start;">
-      <!-- Generado dinámicamente -->
+    <!-- Módulos cargados dinámicamente -->
+    <nav id="course-modules" class="category-pills" style="margin-bottom: 1.5rem; justify-content: flex-start; gap: 8px;">
     </nav>
 
     <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 20px;">
       
-      <!-- Reproductor de Video -->
+      <!-- Video Embed -->
       <section class="video-container" style="background: #1e293b; padding: 10px; border-radius: 8px;">
         <iframe id="course-video" width="100%" height="400" src="" frameborder="0" allowfullscreen style="border-radius: 6px;"></iframe>
       </section>
 
-      <!-- Galería de Infografías/Imágenes y PDF -->
+      <!-- Recursos -->
       <section style="background: #1e293b; padding: 15px; border-radius: 8px;">
-        <h3 style="margin-top: 0;">🖼️ Material Complementario</h3>
-        <div id="course-gallery" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 15px;">
-          <!-- Generado dinámicamente -->
-        </div>
+        <h3 style="margin-top: 0; color: #f8fafc;">🖼️ Material Complementario</h3>
+        <div id="course-gallery"></div>
 
-        <h3>📄 Recursos Descargables</h3>
-        <a id="course-pdf" href="#" target="_blank" class="btn-buy" style="display: block; text-align: center; text-decoration: none; background: #0284c7;">
+        <h3 style="color: #f8fafc; margin-top: 15px;">📄 Recursos Descargables</h3>
+        <a id="course-pdf" href="#" target="_blank" class="btn-buy" style="display: block; text-align: center; text-decoration: none; background: #0284c7; width: 100%; box-sizing: border-border-box;">
           📥 Descargar Guía en PDF
         </a>
       </section>
