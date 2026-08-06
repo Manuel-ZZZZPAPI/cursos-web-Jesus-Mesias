@@ -31,7 +31,7 @@
 
     <section class="courses-list">
       
-      <!-- Curso 1: Química -->
+      <!-- Química -->
       <article class="course-row" data-category="ciencias">
         <div class="course-preview">
           <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400" alt="Química">
@@ -39,35 +39,35 @@
         <div class="course-info">
           <span class="badge badge-green">Ciencias Naturales</span>
           <h2>Laboratorio de Química y Física</h2>
-          <p>Experimentos virtuales, infografías animadas y estructura de la materia explicada paso a paso.</p>
+          <p>Experimentos virtuales, infografías animadas y estructura de la materia.</p>
           <div class="course-meta">
             <span class="price">S/ 39.00 PE</span>
-            <a href="https://mpago.la/1cG7KX4" onclick="redirectToMP('quimica')" class="btn-buy">
-              💳 Pagar en Mercado Pago
-            </a>
+            <button onclick="simularPago('quimica', 'Laboratorio de Química y Física')" class="btn-buy">
+              💳 Comprar Curso
+            </button>
           </div>
         </div>
       </article>
 
-      <!-- Curso 2: Álgebra -->
+      <!-- Álgebra -->
       <article class="course-row" data-category="exactas">
         <div class="course-preview">
-          <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400" alt="Matemáticas">
+          <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400" alt="Álgebra">
         </div>
         <div class="course-info">
           <span class="badge badge-purple">Ciencias Exactas</span>
           <h2>Álgebra Aplicada y Trigonometría</h2>
-          <p>Aprende resolución de problemas reales, gráficos de funciones y ejercicios explicados.</p>
+          <p>Aprende resolución de ecuaciones, gráficos de funciones y trigonometría.</p>
           <div class="course-meta">
             <span class="price">S/ 35.00 PE</span>
-            <a href="https://mpago.la/2XHcwno" onclick="redirectToMP('algebra')" class="btn-buy">
-              💳 Pagar en Mercado Pago
-            </a>
+            <button onclick="simularPago('algebra', 'Álgebra Aplicada y Trigonometría')" class="btn-buy">
+              💳 Comprar Curso
+            </button>
           </div>
         </div>
       </article>
 
-      <!-- Curso 3: Historia -->
+      <!-- Historia -->
       <article class="course-row" data-category="humanidades">
         <div class="course-preview">
           <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=400" alt="Historia">
@@ -75,35 +75,35 @@
         <div class="course-info">
           <span class="badge badge-amber">Humanidades</span>
           <h2>Historia Universal e Infografías</h2>
-          <p>Líneas de tiempo interactivas, esquemas visuales y técnicas de lectura comprensiva.</p>
+          <p>Líneas de tiempo interactivas, esquemas visuales y civilizaciones antiguas.</p>
           <div class="course-meta">
             <span class="price">S/ 29.00 PE</span>
-            <a href="https://mpago.la/1ixD25Z" onclick="redirectToMP('historia')" class="btn-buy">
-              💳 Pagar en Mercado Pago
-            </a>
+            <button onclick="simularPago('historia', 'Historia Universal e Infografías')" class="btn-buy">
+              💳 Comprar Curso
+            </button>
           </div>
         </div>
       </article>
 
-      <!-- Curso 4: Biología -->
+      <!-- Biología -->
       <article class="course-row" data-category="ciencias">
         <div class="course-preview">
           <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=400" alt="Biología">
         </div>
         <div class="course-info">
           <span class="badge badge-green">Ciencias Naturales</span>
-          <h2>Biología General y Anatomía Humana</h2>
-          <p>Células, genética, sistemas del cuerpo humano y ecosistemas ilustrados.</p>
+          <h2>Biología General y Anatomía</h2>
+          <p>Células, genética, sistemas del cuerpo humano y ecología.</p>
           <div class="course-meta">
             <span class="price">S/ 32.00 PE</span>
-            <a href="https://mpago.la/1BmsPXR" onclick="redirectToMP('biologia')" class="btn-buy">
-              💳 Pagar en Mercado Pago
-            </a>
+            <button onclick="simularPago('biologia', 'Biología General y Anatomía')" class="btn-buy">
+              💳 Comprar Curso
+            </button>
           </div>
         </div>
       </article>
 
-      <!-- Curso 5: Lenguaje -->
+      <!-- Lenguaje -->
       <article class="course-row" data-category="humanidades">
         <div class="course-preview">
           <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400" alt="Lenguaje">
@@ -111,12 +111,12 @@
         <div class="course-info">
           <span class="badge badge-amber">Humanidades</span>
           <h2>Lenguaje, Gramática y Redacción</h2>
-          <p>Ortografía práctica, reglas de acentuación, sintaxis y literatura para colegio.</p>
+          <p>Ortografía práctica, reglas de acentuación, sintaxis y literatura.</p>
           <div class="course-meta">
             <span class="price">S/ 28.00 PE</span>
-            <a href="https://mpago.la/1BtX9vd" onclick="redirectToMP('lenguaje')" class="btn-buy">
-              💳 Pagar en Mercado Pago
-            </a>
+            <button onclick="simularPago('lenguaje', 'Lenguaje, Gramática y Redacción')" class="btn-buy">
+              💳 Comprar Curso
+            </button>
           </div>
         </div>
       </article>
@@ -124,24 +124,42 @@
     </section>
   </main>
 
+  <!-- Modal de Pasarela Simulado -->
+  <div id="modal-pay" class="modal-overlay">
+    <div class="modal-box">
+      <span class="close-btn" onclick="closePayModal()">&times;</span>
+      <h2>⚡ Pasarela de Pago Simulado</h2>
+      <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 1rem;">
+        Adquiriendo: <strong id="pay-course-title" style="color: #38bdf8;"></strong>
+      </p>
+      
+      <form onsubmit="procesarPagoSimulado(event)">
+        <input type="text" placeholder="Número de Tarjeta Simulado" value="4509 1234 5678 9000" required class="input-field">
+        <div style="display: flex; gap: 10px;">
+          <input type="text" placeholder="MM/AA" value="12/28" required class="input-field">
+          <input type="password" placeholder="CVV" value="123" required class="input-field">
+        </div>
+        <button type="submit" id="btn-pay-submit" class="btn-submit">Confirmar y Desbloquear Curso</button>
+      </form>
+    </div>
+  </div>
+
   <!-- Modal Autenticación -->
   <div id="modal-auth" class="modal-overlay">
     <div class="modal-box">
       <span class="close-btn" onclick="closeAuthModal()">&times;</span>
       <h2>Registro / Inicio de Sesión</h2>
-      <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 1rem;">Ingresa tus datos para identificarte:</p>
-      
       <form onsubmit="handleAuthSubmit(event)">
         <input type="text" id="auth-name" placeholder="Tu Nombre Completo" required class="input-field">
-        <input type="email" id="auth-email" placeholder="Correo Electrónico" required class="input-field">
+        <input type="email" placeholder="Correo Electrónico" required class="input-field">
         <input type="password" placeholder="Contraseña" required class="input-field">
-        <button type="submit" class="btn-submit">Guardar y Entrar</button>
+        <button type="submit" class="btn-submit">Ingresar</button>
       </form>
     </div>
   </div>
 
   <footer>
-    <p>&copy; 2026 EduAcademy - Plataforma de Aprendizaje por Cursos</p>
+    <p>&copy; 2026 EduAcademy - Plataforma Educativa</p>
   </footer>
 
   <script src="js/main.js"></script>

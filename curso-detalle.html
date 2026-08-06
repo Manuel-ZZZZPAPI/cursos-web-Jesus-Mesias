@@ -3,55 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aula EduAcademy - Detalle del Curso</title>
+  <title>EduAcademy - Contenido del Curso</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="dark-theme dashboard-body">
+<body class="dark-theme">
 
-  <!-- Sidebar Lateral -->
-  <aside class="sidebar">
-    <div class="brand">⚡ EduAcademy</div>
-    <div class="status-box">Status: <span>Acceso Concedido</span></div>
+  <nav class="top-nav">
+    <a href="index.html" class="brand" style="text-decoration: none; color: white;">← Volver al Catálogo</a>
+    <div id="user-display" class="user-pill">Estudiante: Invitado</div>
+  </nav>
+
+  <main class="main-layout">
     
-    <nav class="side-menu" id="course-modules">
-      <a href="#" class="active">📌 Carga de módulos...</a>
-    </nav>
-
-    <a href="index.html" class="btn-exit">← Salir al Catálogo</a>
-  </aside>
-
-  <!-- Contenido Principal Dinámico -->
-  <main class="dashboard-content">
-    
-    <header class="content-header">
+    <!-- Título y descripción dinámica -->
+    <header class="hero-banner" style="text-align: left;">
       <h1 id="course-title">Cargando Curso...</h1>
-      <p id="course-desc">Material de estudio e infografías del tema seleccionado.</p>
+      <p id="course-desc">Cargando información del contenido...</p>
     </header>
 
-    <div class="content-split">
+    <!-- Pestañas de Navegación entre Módulos -->
+    <nav id="course-modules" class="category-pills" style="margin-bottom: 1.5rem; justify-content: flex-start;">
+      <!-- Generado dinámicamente -->
+    </nav>
+
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 20px;">
       
-      <!-- Columna 1: Galería Visual e Infografías Dinámicas -->
-      <section class="visual-panel">
-        <h2>🖼️ Esquemas e Infografías del Tema</h2>
-        <p class="subtitle">Haz clic en cada recurso visual para estudiarlo:</p>
-        
-        <div class="image-gallery" id="course-gallery">
-          <!-- Carga via JavaScript -->
-        </div>
+      <!-- Reproductor de Video -->
+      <section class="video-container" style="background: #1e293b; padding: 10px; border-radius: 8px;">
+        <iframe id="course-video" width="100%" height="400" src="" frameborder="0" allowfullscreen style="border-radius: 6px;"></iframe>
       </section>
 
-      <!-- Columna 2: Video y PDF -->
-      <section class="media-panel">
-        <h2>🎥 Video Explicativo de la Lección</h2>
-        <div class="video-wrapper">
-          <iframe id="course-video" src="" title="Video de la clase" allowfullscreen></iframe>
+      <!-- Galería de Infografías/Imágenes y PDF -->
+      <section style="background: #1e293b; padding: 15px; border-radius: 8px;">
+        <h3 style="margin-top: 0;">🖼️ Material Complementario</h3>
+        <div id="course-gallery" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 15px;">
+          <!-- Generado dinámicamente -->
         </div>
 
-        <div class="download-box">
-          <h3>📥 Material Complementario</h3>
-          <p>Descarga la guía en formato PDF para resolver las tareas en casa:</p>
-          <a id="course-pdf" href="#" download class="btn-download">📄 Descargar Guía Práctica PDF</a>
-        </div>
+        <h3>📄 Recursos Descargables</h3>
+        <a id="course-pdf" href="#" target="_blank" class="btn-buy" style="display: block; text-align: center; text-decoration: none; background: #0284c7;">
+          📥 Descargar Guía en PDF
+        </a>
       </section>
 
     </div>

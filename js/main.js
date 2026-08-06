@@ -152,10 +152,32 @@ const coursesData = {
   }
 };
 
-// --- REDIRECCIÓN Y GUARDADO PREVIO A MERCADO PAGO ---
-function redirectToMP(courseKey) {
-  // Guarda qué curso intentó comprar antes de salir hacia Mercado Pago
+// --- SIMULACIÓN DE PASARELA Y SELECCIÓN ---
+function simularPago(courseKey, title) {
   localStorage.setItem('active_course', courseKey);
+  const titleElem = document.getElementById('pay-course-title');
+  if (titleElem) titleElem.innerText = title;
+  
+  const modalPay = document.getElementById('modal-pay');
+  if (modalPay) modalPay.style.display = 'flex';
+}
+
+function closePayModal() {
+  const modalPay = document.getElementById('modal-pay');
+  if (modalPay) modalPay.style.display = 'none';
+}
+
+function procesarPagoSimulado(event) {
+  event.preventDefault();
+  const btn = document.getElementById('btn-pay-submit');
+  if (btn) {
+    btn.innerText = "⏳ Procesando pago...";
+    btn.disabled = true;
+  }
+  setTimeout(() => {
+    alert("¡Pago procesado con éxito! Entrando a la plataforma de estudio...");
+    window.location.href = 'curso-detalle.html';
+  }, 1000);
 }
 
 // --- FILTRADO DE CURSOS ---
